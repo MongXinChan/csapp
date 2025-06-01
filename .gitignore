@@ -1,0 +1,19 @@
+# c
+.o
+.out
+.exe
+a.out
+
+# cpp
+*.a
+*.so
+*.o
+*.out
+
+#Cmake
+*.cmake
+CMakeCache.txt
+CMakeFiles
+
+#vscode
+.vscode
