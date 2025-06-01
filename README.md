@@ -1,6 +1,41 @@
 # csapp
 CMU15213 CSAPP course files stored in Linux (WSL)
 
+## CS:APP Docker and Materials
+
+CS:APP is an excellent material for learning computer systems and systems programming. However, it is inconvenient to use a virtual machine for self-learners. 
+In this repo, I build a Docker image with most pre-requistes installed and attached all lab materials in it.
+You can directly use this Docker image [xieguochao/csapp](https://hub.docker.com/r/xieguochao/csapp).
+
+The original materials of CS:APP is from CMU: [CS:APP labs](http://csapp.cs.cmu.edu/3e/labs.html). 
+
+The code server is based on [https://github.com/cdr/code-server](https://github.com/cdr/code-server).
+
+## How to Use It?
+
+**Install Docker or Podman**
+
+- [Docker Engine](https://docs.docker.com/engine/install/)
+- [Podman](https://podman.io/docs/installation)
+
+**Clone Repository**
+
+1. `git clone --branch 1.8 https://github.com/XieGuochao/csapp.git`.
+2. `cd csapp`.
+
+**Build Image (Optional)**
+
+1. `cd csapp-docker`
+2. `docker build -t csapp .`.
+
+ **Run**
+
+Under the root directory.
+
+`docker run -p 7777:7777 -v "$PWD/labs:/home/csapp/project" csapp`
+
+Then you can access your labs via browser [http://localhost:7777/](http://localhost:7777/) with password `csapp`. You can find all files in `labs` under `/home/csapp/project`.
+
 # 前言
 
 在我看来csapp更像是一个c语言的基础教程，里面涉及了许多更底层的原理，比如为什么强制类型转化只是把解释类型的作用更换了，而其比特位不变？为什么`3<4<3`最后返回结果是`0`？负数的反码+1为什么等于反码？
